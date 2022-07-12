@@ -1,6 +1,6 @@
- version: 2.1
+version: 2.1
 orbs:
-  - heroku: circleci/heroku@1.0.1
+  heroku: circleci/heroku@1.0.1
 jobs:
   build-and-test:
     executor: heroku/default
@@ -61,7 +61,6 @@ jobs:
             #heroku ps:scale web=1 -a $HEROKU_APP_NAME
             heroku container:push web -a $HEROKU_APP_NAME
             heroku container:release web -a $HEROKU_APP_NAME
-
 workflows:
   build-test-deploy:
     jobs:
